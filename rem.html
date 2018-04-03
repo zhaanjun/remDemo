@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .main{
+            width: 19.2rem;
+            margin: auto;
+        }
+        .top{
+            height: 0.86rem;
+            background: #b0dfb0;
+        }
+        .middle{
+            margin-top: 0.26rem;
+            font-size: 0;
+        }
+        .middle>div{
+            display: inline-block;
+            background: #101433;
+            height: 7.01rem;
+        }
+        .middle .mleft{
+            width: 3.94rem;
+            margin-left: 0.26rem;
+        }
+        .middle .mcenter{
+            width: 10.28rem;
+            margin: 0 0.26rem;
+        }
+        .middle .mright{
+            width: 3.94rem;
+            margin-right: 0.26rem;
+        }
+        .buttom{
+            height: 2.68rem;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top"></div>
+        <div class="middle">
+            <div class="mleft"></div>
+            <div class="mcenter"></div>
+            <div class="mright"></div>
+        </div>
+        <div class="buttom"></div>
+    </div>
+    <script>
+        function getRem(pwidth, prem) {
+            var html = document.getElementsByTagName("html")[0];
+            var oWidth = document.documentElement.clientWidth;
+            html.style.fontSize = oWidth / pwidth * prem + "px";
+            // html.style.fontSize = (oWidth-17) / pwidth * prem + "px";
+        } 
+        window.onload = function () {
+            getRem(1920, 100);
+        };
+        window.onresize = function () {
+            getRem(1920, 100);
+        };
+        
+        // var fun = function (doc, win) {
+        //     var docEl = doc.documentElement,
+        //         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        //         recalc = function () {
+        //             var clientWidth = docEl.clientWidth;
+        //             if (!clientWidth) return;
+        //             docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';
+        //         };
+        //     if (!doc.addEventListener) return;
+        //     win.addEventListener(resizeEvt, recalc, false);
+        //     doc.addEventListener('DOMContentLoaded', recalc, false);
+        // }
+        // fun(document, window);
+
+    </script>
+</body>
+</html>
