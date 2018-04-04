@@ -39,7 +39,7 @@
             width: 3.94rem;
             margin-right: 0.26rem;
         }
-        .buttom{
+        .bottom{
             height: 2.68rem;
             background: pink;
         }
@@ -53,35 +53,22 @@
             <div class="mcenter"></div>
             <div class="mright"></div>
         </div>
-        <div class="buttom"></div>
+        <div class="bottom"></div>
     </div>
     <script>
-        function getRem(pwidth, prem) {
+        function getRem(pHidth, prem) {
             var html = document.getElementsByTagName("html")[0];
-            var oWidth = document.documentElement.clientWidth;
-            html.style.fontSize = oWidth / pwidth * prem + "px";
+            var oHidth = document.documentElement.clientHeight || document.body.clientHeight;
+            console.log(oHidth);
+            html.style.fontSize = oHidth / pHidth * prem + "px";
             // html.style.fontSize = (oWidth-17) / pwidth * prem + "px";
         } 
         window.onload = function () {
-            getRem(1920, 100);
+            getRem(1080, 100);
         };
         window.onresize = function () {
-            getRem(1920, 100);
+            getRem(1080, 100);
         };
-        
-        // var fun = function (doc, win) {
-        //     var docEl = doc.documentElement,
-        //         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        //         recalc = function () {
-        //             var clientWidth = docEl.clientWidth;
-        //             if (!clientWidth) return;
-        //             docEl.style.fontSize = 100 * (clientWidth / 1920) + 'px';
-        //         };
-        //     if (!doc.addEventListener) return;
-        //     win.addEventListener(resizeEvt, recalc, false);
-        //     doc.addEventListener('DOMContentLoaded', recalc, false);
-        // }
-        // fun(document, window);
 
     </script>
 </body>
